@@ -6,7 +6,7 @@ orbs:
 jobs:
   build:
     executor: win/server-2022
-      size: "large" 
+      size: "Large" 
     
     steps:
     - run: |
